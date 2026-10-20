@@ -3,16 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Türkoğlu Mühendislik | Ankara PCB Tasarımı ve Gömülü Sistemler</title>
-    <meta name="description" content="Türkoğlu Mühendislik; Ankara'da PCB tasarımı, elektronik kart revizyonu, gömülü yazılım, EPLAN pano projeleri, AutoCAD ve SolidWorks çizim hizmetleri sunar.">
-    <meta name="keywords" content="Türkoğlu Mühendislik, Ankara PCB tasarımı, elektronik kart revizyonu, gömülü yazılım, EPLAN, SolidWorks, AutoCAD, mühendislik hizmetleri Ankara">
+    <title>Türkoğlu Mühendislik | Profesyonel PCB ve Gömülü Sistem Çözümleri</title>
+    <meta name="description" content="Ankara merkezli Türkoğlu Mühendislik; profesyonel PCB tasarımı, elektronik kart revizyonu, gömülü yazılım, EPLAN ve SolidWorks mühendislik hizmetleri sunar.">
+    <meta name="keywords" content="Türkoğlu Mühendislik, Ankara PCB tasarımı, elektronik kart revizyonu, gömülü yazılım, EPLAN, SolidWorks, mühendislik hizmetleri">
     <meta name="google-site-verification" content="mTuzcdj3dChLrxL7nua0qOTvNCqgqzvA2lE5NRnwroo" />
     <style>
         :root {
-            --bg-main: #070b19;
-            --bg-card: #0f172a;
-            --border-color: #1e293b;
-            --accent-gold: #d4af37;
+            --bg-body: #0b1120;
+            --bg-card: #151e32;
+            --border-clr: #22304a;
+            --accent-gold: #c5a059;
             --accent-blue: #38bdf8;
             --text-main: #f8fafc;
             --text-muted: #94a3b8;
@@ -21,31 +21,31 @@
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Inter', 'Segoe UI', sans-serif;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
         body {
-            background-color: var(--bg-main);
+            background-color: var(--bg-body);
             color: var(--text-main);
-            line-height: 1.7;
+            line-height: 1.6;
         }
-        /* Navbar */
+        /* Top Navigation Bar */
         nav {
-            background-color: rgba(7, 11, 25, 0.9);
+            background-color: rgba(11, 17, 32, 0.95);
             backdrop-filter: blur(10px);
-            border-bottom: 1px solid var(--border-color);
+            border-bottom: 1px solid var(--border-clr);
             position: fixed;
             top: 0;
             width: 100%;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 18px 50px;
+            padding: 15px 50px;
             z-index: 1000;
         }
         .nav-brand {
-            font-size: 1.25rem;
+            font-size: 1.3rem;
             font-weight: 800;
-            letter-spacing: 1.5px;
+            letter-spacing: 1px;
             color: var(--text-main);
         }
         .nav-brand span {
@@ -55,6 +55,7 @@
             display: flex;
             gap: 30px;
             list-style: none;
+            align-items: center;
         }
         .nav-links a {
             color: var(--text-muted);
@@ -66,17 +67,27 @@
         .nav-links a:hover {
             color: var(--accent-gold);
         }
+        .nav-btn {
+            background-color: var(--accent-gold);
+            color: var(--bg-body) !important;
+            padding: 8px 20px;
+            border-radius: 4px;
+            font-weight: 700 !important;
+            transition: opacity 0.2s;
+        }
+        .nav-btn:hover {
+            opacity: 0.9;
+        }
         /* Hero Section */
         .hero {
             padding: 180px 20px 100px 20px;
             text-align: center;
-            background: radial-gradient(circle at center, #111e38 0%, var(--bg-main) 70%);
-            border-bottom: 1px solid var(--border-color);
+            background: linear-gradient(135deg, #0b1120 0%, #131c31 100%);
+            border-bottom: 1px solid var(--border-clr);
         }
         .hero h1 {
             font-size: 3rem;
             font-weight: 800;
-            color: var(--text-main);
             margin-bottom: 20px;
             max-width: 900px;
             margin-left: auto;
@@ -89,10 +100,10 @@
         .hero p {
             font-size: 1.15rem;
             color: var(--text-muted);
-            max-width: 700px;
+            max-width: 750px;
             margin: 0 auto 35px auto;
         }
-        /* Containers & Grids */
+        /* Container & Grid */
         .container {
             max-width: 1150px;
             margin: 0 auto;
@@ -103,7 +114,6 @@
             font-size: 2.2rem;
             font-weight: 700;
             margin-bottom: 50px;
-            color: var(--text-main);
         }
         .section-title span {
             color: var(--accent-gold);
@@ -116,15 +126,15 @@
         /* Cards */
         .card {
             background-color: var(--bg-card);
-            border: 1px solid var(--border-color);
-            border-radius: 12px;
+            border: 1px solid var(--border-clr);
+            border-radius: 8px;
             padding: 35px;
             transition: all 0.3s ease;
         }
         .card:hover {
             transform: translateY(-5px);
             border-color: var(--accent-gold);
-            box-shadow: 0 10px 30px rgba(212, 175, 55, 0.05);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
         }
         .card h3 {
             color: var(--accent-gold);
@@ -136,47 +146,43 @@
             color: var(--text-muted);
             font-size: 0.95rem;
         }
-        /* Projects Section Background */
-        .projects-area {
-            background-color: #050814;
-            border-top: 1px solid var(--border-color);
-            border-bottom: 1px solid var(--border-color);
+        /* Secondary Section */
+        .alt-section {
+            background-color: #070a14;
+            border-top: 1px solid var(--border-clr);
+            border-bottom: 1px solid var(--border-clr);
         }
         /* Contact Box */
         .contact-box {
-            background: linear-gradient(135deg, var(--bg-card), #13223f);
+            background-color: var(--bg-card);
             border: 1px solid var(--accent-gold);
-            border-radius: 12px;
+            border-radius: 8px;
             padding: 60px 40px;
             text-align: center;
             max-width: 850px;
             margin: 0 auto;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.4);
         }
         .contact-box h2 {
             font-size: 2rem;
             margin-bottom: 15px;
-            color: var(--text-main);
         }
         .contact-box p {
             color: var(--text-muted);
             margin-bottom: 30px;
-            font-size: 1.1rem;
+            font-size: 1.05rem;
         }
-        .btn {
+        .btn-large {
             display: inline-block;
             background-color: var(--accent-gold);
-            color: var(--bg-main);
+            color: var(--bg-body);
             padding: 14px 40px;
             font-weight: 700;
             text-decoration: none;
-            border-radius: 6px;
-            transition: all 0.2s;
-            font-size: 1rem;
+            border-radius: 4px;
+            transition: opacity 0.2s;
         }
-        .btn:hover {
-            background-color: #e6c555;
-            transform: scale(1.02);
+        .btn-large:hover {
+            opacity: 0.9;
         }
         /* Footer */
         footer {
@@ -184,8 +190,8 @@
             padding: 40px;
             color: var(--text-muted);
             font-size: 0.9rem;
-            background-color: #04060e;
-            border-top: 1px solid var(--border-color);
+            background-color: #050810;
+            border-top: 1px solid var(--border-clr);
         }
         @media(max-width: 768px) {
             .hero h1 { font-size: 2.2rem; }
@@ -201,14 +207,14 @@
         <ul class="nav-links">
             <li><a href="#hizmetler">Hizmetler</a></li>
             <li><a href="#projeler">Projeler</a></li>
-            <li><a href="#iletisim">İletişim</a></li>
+            <li><a href="#iletisim" class="nav-btn">İletişim / Teklif</a></li>
         </ul>
     </nav>
 
     <header class="hero">
         <h1>Ankara Profesyonel Mühendislik ve <span>Tasarım Çözümleri</span></h1>
-        <p>Elektronik donanım, PCB tasarımı, gömülü sistemler, endüstriyel pano ve mekanik modelleme projeleriniz için güvenilir alt yüklenici ortağınız.</p>
-        <a href="#iletisim" class="btn">Hemen Teklif Alın</a>
+        <p>Elektronik donanım, PCB tasarımı, gömülü sistemler, endüstriyel pano ve mekanik modelleme projeleriniz için güvenilir mühendislik ortağınız.</p>
+        <a href="#iletisim" class="btn-large">Hemen Teklif Alın</a>
     </header>
 
     <div class="container" id="hizmetler">
@@ -241,7 +247,7 @@
         </div>
     </div>
 
-    <div class="projects-area" id="projeler">
+    <div class="alt-section" id="projeler">
         <div class="container">
             <h2 class="section-title">Çalışma Alanları & <span>Projeler</span></h2>
             <div class="grid-3">
@@ -265,7 +271,7 @@
         <div class="contact-box">
             <h2>Projeleriniz İçin Bize Ulaşın</h2>
             <p>Ankara merkezli mühendislik ve tasarım desteklerimiz, fason çözümler veya acil proje talepleriniz için doğrudan iletişime geçin.</p>
-            <a href="mailto:info@turkoglumuhendislik.com" class="btn">E-Posta Gönder</a>
+            <a href="mailto:info@turkoglumuhendislik.com" class="btn-large">E-Posta Gönder</a>
         </div>
     </div>
 
