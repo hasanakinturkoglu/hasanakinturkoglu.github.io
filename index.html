@@ -9,11 +9,11 @@
     <meta name="google-site-verification" content="mTuzcdj3dChLrxL7nua0qOTvNCqgqzvA2lE5NRnwroo" />
     <style>
         :root {
-            --bg-body: #0b1120;
-            --bg-card: #151e32;
-            --border-clr: #22304a;
-            --accent-gold: #c5a059;
-            --accent-blue: #38bdf8;
+            --bg-body: #050b14;
+            --bg-card: #0f172a;
+            --border-clr: #1e293b;
+            --accent-color: #f59e0b; /* Dikkat çekici, müşteri çeken kehribar/turuncu vurgu */
+            --accent-hover: #d97706;
             --text-main: #f8fafc;
             --text-muted: #94a3b8;
         }
@@ -29,11 +29,11 @@
             line-height: 1.6;
             scroll-behavior: smooth;
         }
-        /* Top Utility Bar */
+        /* Üst İletişim Çubuğu */
         .top-bar {
-            background-color: #050810;
+            background-color: #020408;
             border-bottom: 1px solid var(--border-clr);
-            padding: 8px 50px;
+            padding: 10px 50px;
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -50,11 +50,11 @@
             transition: color 0.2s;
         }
         .top-bar-info a:hover {
-            color: var(--accent-gold);
+            color: var(--accent-color);
         }
-        /* Navigation */
+        /* Navigasyon */
         nav {
-            background-color: rgba(11, 17, 32, 0.95);
+            background-color: rgba(5, 11, 20, 0.95);
             backdrop-filter: blur(10px);
             border-bottom: 1px solid var(--border-clr);
             position: sticky;
@@ -67,14 +67,24 @@
             z-index: 1000;
         }
         .nav-brand {
-            font-size: 1.3rem;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+        }
+        /* Logo görseli veya ikonu için alan */
+        .nav-brand img {
+            height: 38px;
+            width: auto;
+        }
+        .logo-text {
+            font-size: 1.25rem;
             font-weight: 800;
             letter-spacing: 1px;
             color: var(--text-main);
-            text-decoration: none;
         }
-        .nav-brand span {
-            color: var(--accent-gold);
+        .logo-text span {
+            color: var(--accent-color);
         }
         .nav-links {
             display: flex;
@@ -90,28 +100,28 @@
             transition: color 0.2s;
         }
         .nav-links a:hover {
-            color: var(--accent-gold);
+            color: var(--accent-color);
         }
         .nav-btn {
-            background-color: var(--accent-gold);
-            color: var(--bg-body) !important;
-            padding: 8px 20px;
-            border-radius: 4px;
+            background-color: var(--accent-color);
+            color: #050b14 !important;
+            padding: 9px 22px;
+            border-radius: 6px;
             font-weight: 700 !important;
-            transition: opacity 0.2s;
+            transition: background-color 0.2s;
         }
         .nav-btn:hover {
-            opacity: 0.9;
+            background-color: var(--accent-hover) !important;
         }
-        /* Hero Section */
+        /* Hero Alanı */
         .hero {
-            padding: 140px 20px 100px 20px;
+            padding: 150px 20px 110px 20px;
             text-align: center;
-            background: linear-gradient(135deg, #0b1120 0%, #131c31 100%);
+            background: radial-gradient(circle at center, #0f172a 0%, var(--bg-body) 70%);
             border-bottom: 1px solid var(--border-clr);
         }
         .hero h1 {
-            font-size: 2.8rem;
+            font-size: 3rem;
             font-weight: 800;
             margin-bottom: 20px;
             max-width: 900px;
@@ -120,7 +130,7 @@
             line-height: 1.2;
         }
         .hero h1 span {
-            color: var(--accent-gold);
+            color: var(--accent-color);
         }
         .hero p {
             font-size: 1.15rem;
@@ -134,7 +144,7 @@
             justify-content: center;
             align-items: center;
         }
-        /* Container & Grid */
+        /* Konteyner & Grid */
         .container {
             max-width: 1150px;
             margin: 0 auto;
@@ -147,28 +157,28 @@
             margin-bottom: 50px;
         }
         .section-title span {
-            color: var(--accent-gold);
+            color: var(--accent-color);
         }
         .grid-3 {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
             gap: 30px;
         }
-        /* Cards */
+        /* Kartlar */
         .card {
             background-color: var(--bg-card);
             border: 1px solid var(--border-clr);
-            border-radius: 8px;
+            border-radius: 10px;
             padding: 35px;
             transition: all 0.3s ease;
         }
         .card:hover {
             transform: translateY(-5px);
-            border-color: var(--accent-gold);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            border-color: var(--accent-color);
+            box-shadow: 0 10px 30px rgba(245, 158, 11, 0.08);
         }
         .card h3 {
-            color: var(--accent-gold);
+            color: var(--accent-color);
             font-size: 1.35rem;
             margin-bottom: 15px;
             font-weight: 600;
@@ -177,20 +187,20 @@
             color: var(--text-muted);
             font-size: 0.95rem;
         }
-        /* Alt Section */
+        /* Alternatif Bölüm Arka Planı */
         .alt-section {
-            background-color: #070a14;
+            background-color: #030712;
             border-top: 1px solid var(--border-clr);
             border-bottom: 1px solid var(--border-clr);
         }
-        /* Contact Section */
+        /* İletişim Kutusu */
         .contact-container {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 40px;
             background-color: var(--bg-card);
             border: 1px solid var(--border-clr);
-            border-radius: 8px;
+            border-radius: 10px;
             padding: 50px;
         }
         .contact-info h2 {
@@ -198,7 +208,7 @@
             margin-bottom: 15px;
         }
         .contact-info h2 span {
-            color: var(--accent-gold);
+            color: var(--accent-color);
         }
         .contact-info p {
             color: var(--text-muted);
@@ -218,7 +228,7 @@
             text-decoration: none;
         }
         .contact-item span {
-            color: var(--accent-gold);
+            color: var(--accent-color);
             font-weight: bold;
         }
         .contact-form {
@@ -231,7 +241,7 @@
             padding: 12px 15px;
             background-color: var(--bg-body);
             border: 1px solid var(--border-clr);
-            border-radius: 4px;
+            border-radius: 6px;
             color: var(--text-main);
             font-size: 0.95rem;
         }
@@ -241,19 +251,19 @@
         }
         .btn-large {
             display: inline-block;
-            background-color: var(--accent-gold);
-            color: var(--bg-body);
+            background-color: var(--accent-color);
+            color: #050b14;
             padding: 14px 40px;
             font-weight: 700;
             text-decoration: none;
-            border-radius: 4px;
+            border-radius: 6px;
             border: none;
             cursor: pointer;
             text-align: center;
-            transition: opacity 0.2s;
+            transition: background-color 0.2s;
         }
         .btn-large:hover {
-            opacity: 0.9;
+            background-color: var(--accent-hover);
         }
         /* Footer */
         footer {
@@ -261,7 +271,7 @@
             padding: 40px;
             color: var(--text-muted);
             font-size: 0.9rem;
-            background-color: #050810;
+            background-color: #020408;
             border-top: 1px solid var(--border-clr);
         }
         @media(max-width: 768px) {
@@ -283,9 +293,13 @@
         <div>Ankara, Türkiye</div>
     </div>
 
-    <!-- Ana Menü -->
+    <!-- Ana Menü ve Logo Alanı -->
     <nav>
-        <a href="#" class="nav-brand">TÜRKOĞLU <span>MÜHENDİSLİK</span></a>
+        <a href="#" class="nav-brand">
+            <!-- LOGO EKLEME NOTU: Logo görselini yüklediğinde aşağıdaki satırı aktif edebilirsin -->
+            <!-- <img src="logo.png" alt="Türkoğlu Mühendislik Logo"> -->
+            <div class="logo-text">TÜRKOĞLU <span>MÜHENDİSLİK</span></div>
+        </a>
         <ul class="nav-links">
             <li><a href="#hizmetler">Hizmetler</a></li>
             <li><a href="#projeler">Çalışma Alanları</a></li>
@@ -360,7 +374,7 @@
         <h2 class="section-title">Neden <span>Türkoğlu Mühendislik?</span></h2>
         <div class="card" style="max-width: 900px; margin: 0 auto; text-align: center; padding: 40px;">
             <p style="font-size: 1.1rem; color: var(--text-main);">
-                Ankara merkezli olarak faaliyet gösteren Türkoğlu Mühendislik; elektronik donanım geliştirme, endüstriyel otomasyon projeleri ve mekanik tasarım alanlarında müvekkillerine yüksek kaliteli, hızlı ve sürdürülebilir fason mühendislik çözümleri sunar. İlk ilkemiz, karmaşık süreçleri en yalın ve en güvenilir mühendislik standartlarıyla çözüme kavuşturmaktır.
+                Ankara merkezli olarak faaliyet gösteren Türkoğlu Mühendislik; elektronik donanım geliştirme, endüstriyel otomasyon projeleri ve mekanik tasarım alanlarında müvekkillerine yüksek kaliteli, hızlı ve sürdürülebilir fason mühendislik çözümleri sunar. İlk ilke, karmaşık süreçleri en yalın ve en güvenilir mühendislik standartlarıyla çözüme kavuşturmaktır.
             </p>
         </div>
     </div>
