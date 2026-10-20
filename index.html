@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Türkoğlu Mühendislik | Profesyonel PCB ve Gömülü Sistem Çözümleri</title>
-    <meta name="description" content="Ankara merkezli Türkoğlu Mühendislik; profesyonel PCB tasarımı, elektronik kart revizyonu, gömülü yazılım, EPLAN ve SolidWorks mühendislik hizmetleri sunar.">
+    <title>Türkoğlu Mühendislik | Ankara PCB Tasarımı ve Elektronik Çözümleri</title>
+    <meta name="description" content="Türkoğlu Mühendislik; Ankara'da profesyonel PCB tasarımı, elektronik kart revizyonu, gömülü yazılım, EPLAN pano projelendirme ve SolidWorks mekanik çizim hizmetleri sunar.">
     <meta name="keywords" content="Türkoğlu Mühendislik, Ankara PCB tasarımı, elektronik kart revizyonu, gömülü yazılım, EPLAN, SolidWorks, mühendislik hizmetleri">
     <meta name="google-site-verification" content="mTuzcdj3dChLrxL7nua0qOTvNCqgqzvA2lE5NRnwroo" />
     <style>
@@ -27,13 +27,37 @@
             background-color: var(--bg-body);
             color: var(--text-main);
             line-height: 1.6;
+            scroll-behavior: smooth;
         }
-        /* Top Navigation Bar */
+        /* Top Utility Bar */
+        .top-bar {
+            background-color: #050810;
+            border-bottom: 1px solid var(--border-clr);
+            padding: 8px 50px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+        .top-bar-info {
+            display: flex;
+            gap: 25px;
+        }
+        .top-bar-info a {
+            color: var(--text-muted);
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+        .top-bar-info a:hover {
+            color: var(--accent-gold);
+        }
+        /* Navigation */
         nav {
             background-color: rgba(11, 17, 32, 0.95);
             backdrop-filter: blur(10px);
             border-bottom: 1px solid var(--border-clr);
-            position: fixed;
+            position: sticky;
             top: 0;
             width: 100%;
             display: flex;
@@ -47,13 +71,14 @@
             font-weight: 800;
             letter-spacing: 1px;
             color: var(--text-main);
+            text-decoration: none;
         }
         .nav-brand span {
             color: var(--accent-gold);
         }
         .nav-links {
             display: flex;
-            gap: 30px;
+            gap: 25px;
             list-style: none;
             align-items: center;
         }
@@ -80,13 +105,13 @@
         }
         /* Hero Section */
         .hero {
-            padding: 180px 20px 100px 20px;
+            padding: 140px 20px 100px 20px;
             text-align: center;
             background: linear-gradient(135deg, #0b1120 0%, #131c31 100%);
             border-bottom: 1px solid var(--border-clr);
         }
         .hero h1 {
-            font-size: 3rem;
+            font-size: 2.8rem;
             font-weight: 800;
             margin-bottom: 20px;
             max-width: 900px;
@@ -102,6 +127,12 @@
             color: var(--text-muted);
             max-width: 750px;
             margin: 0 auto 35px auto;
+        }
+        .hero-buttons {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            align-items: center;
         }
         /* Container & Grid */
         .container {
@@ -146,30 +177,67 @@
             color: var(--text-muted);
             font-size: 0.95rem;
         }
-        /* Secondary Section */
+        /* Alt Section */
         .alt-section {
             background-color: #070a14;
             border-top: 1px solid var(--border-clr);
             border-bottom: 1px solid var(--border-clr);
         }
-        /* Contact Box */
-        .contact-box {
+        /* Contact Section */
+        .contact-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
             background-color: var(--bg-card);
-            border: 1px solid var(--accent-gold);
+            border: 1px solid var(--border-clr);
             border-radius: 8px;
-            padding: 60px 40px;
-            text-align: center;
-            max-width: 850px;
-            margin: 0 auto;
+            padding: 50px;
         }
-        .contact-box h2 {
+        .contact-info h2 {
             font-size: 2rem;
             margin-bottom: 15px;
         }
-        .contact-box p {
+        .contact-info h2 span {
+            color: var(--accent-gold);
+        }
+        .contact-info p {
             color: var(--text-muted);
             margin-bottom: 30px;
+        }
+        .contact-details {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            color: var(--text-main);
             font-size: 1.05rem;
+            text-decoration: none;
+        }
+        .contact-item span {
+            color: var(--accent-gold);
+            font-weight: bold;
+        }
+        .contact-form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+        .contact-form input, .contact-form textarea {
+            width: 100%;
+            padding: 12px 15px;
+            background-color: var(--bg-body);
+            border: 1px solid var(--border-clr);
+            border-radius: 4px;
+            color: var(--text-main);
+            font-size: 0.95rem;
+        }
+        .contact-form textarea {
+            height: 120px;
+            resize: vertical;
         }
         .btn-large {
             display: inline-block;
@@ -179,6 +247,9 @@
             font-weight: 700;
             text-decoration: none;
             border-radius: 4px;
+            border: none;
+            cursor: pointer;
+            text-align: center;
             transition: opacity 0.2s;
         }
         .btn-large:hover {
@@ -195,28 +266,44 @@
         }
         @media(max-width: 768px) {
             .hero h1 { font-size: 2.2rem; }
-            nav { padding: 15px 20px; }
-            .nav-links { display: none; }
+            nav, .top-bar { padding: 15px 20px; }
+            .nav-links, .top-bar { display: none; }
+            .contact-container { grid-template-columns: 1fr; padding: 25px; }
         }
     </style>
 </head>
 <body>
 
+    <!-- Üst İletişim Çubuğu -->
+    <div class="top-bar">
+        <div class="top-bar-info">
+            <a href="tel:05513694606">📞 0551 369 46 06</a>
+            <a href="mailto:turkogluhasanakin@gmail.com">✉️ turkogluhasanakin@gmail.com</a>
+        </div>
+        <div>Ankara, Türkiye</div>
+    </div>
+
+    <!-- Ana Menü -->
     <nav>
-        <div class="nav-brand">TÜRKOĞLU <span>MÜHENDİSLİK</span></div>
+        <a href="#" class="nav-brand">TÜRKOĞLU <span>MÜHENDİSLİK</span></a>
         <ul class="nav-links">
             <li><a href="#hizmetler">Hizmetler</a></li>
-            <li><a href="#projeler">Projeler</a></li>
-            <li><a href="#iletisim" class="nav-btn">İletişim / Teklif</a></li>
+            <li><a href="#projeler">Çalışma Alanları</a></li>
+            <li><a href="#hakkimizda">Hakkımızda</a></li>
+            <li><a href="#iletisim" class="nav-btn">İletişim & Teklif</a></li>
         </ul>
     </nav>
 
+    <!-- Manşet Alanı (Hero) -->
     <header class="hero">
-        <h1>Ankara Profesyonel Mühendislik ve <span>Tasarım Çözümleri</span></h1>
-        <p>Elektronik donanım, PCB tasarımı, gömülü sistemler, endüstriyel pano ve mekanik modelleme projeleriniz için güvenilir mühendislik ortağınız.</p>
-        <a href="#iletisim" class="btn-large">Hemen Teklif Alın</a>
+        <h1>Ankara Profesyonel Mühendislik ve <span>PCB Tasarım Çözümleri</span></h1>
+        <p>Elektronik donanım, çok katmanlı PCB tasarımı, gömülü sistemler, endüstriyel pano ve mekanik modelleme projeleriniz için güvenilir mühendislik ortağınız.</p>
+        <div class="hero-buttons">
+            <a href="#iletisim" class="btn-large">Hemen Teklif Alın</a>
+        </div>
     </header>
 
+    <!-- Uzmanlık Alanları -->
     <div class="container" id="hizmetler">
         <h2 class="section-title">Uzmanlık <span>Alanlarımız</span></h2>
         <div class="grid-3">
@@ -247,9 +334,10 @@
         </div>
     </div>
 
+    <!-- Çalışma Alanları -->
     <div class="alt-section" id="projeler">
         <div class="container">
-            <h2 class="section-title">Çalışma Alanları & <span>Projeler</span></h2>
+            <h2 class="section-title">Çalışma Alanları & <span>Projelendirme</span></h2>
             <div class="grid-3">
                 <div class="card">
                     <h3>Güç Elektroniği & Batarya</h3>
@@ -267,11 +355,36 @@
         </div>
     </div>
 
-    <div class="container" id="iletisim">
-        <div class="contact-box">
-            <h2>Projeleriniz İçin Bize Ulaşın</h2>
-            <p>Ankara merkezli mühendislik ve tasarım desteklerimiz, fason çözümler veya acil proje talepleriniz için doğrudan iletişime geçin.</p>
-            <a href="mailto:info@turkoglumuhendislik.com" class="btn-large">E-Posta Gönder</a>
+    <!-- Hakkımızda Bölümü -->
+    <div class="container" id="hakkimizda">
+        <h2 class="section-title">Neden <span>Türkoğlu Mühendislik?</span></h2>
+        <div class="card" style="max-width: 900px; margin: 0 auto; text-align: center; padding: 40px;">
+            <p style="font-size: 1.1rem; color: var(--text-main);">
+                Ankara merkezli olarak faaliyet gösteren Türkoğlu Mühendislik; elektronik donanım geliştirme, endüstriyel otomasyon projeleri ve mekanik tasarım alanlarında müvekkillerine yüksek kaliteli, hızlı ve sürdürülebilir fason mühendislik çözümleri sunar. İlk ilkemiz, karmaşık süreçleri en yalın ve en güvenilir mühendislik standartlarıyla çözüme kavuşturmaktır.
+            </p>
+        </div>
+    </div>
+
+    <!-- İletişim Bölümü -->
+    <div class="alt-section" id="iletisim">
+        <div class="container">
+            <div class="contact-container">
+                <div class="contact-info">
+                    <h2>Bizimle <span>İletişime Geçin</span></h2>
+                    <p>Ankara içi ve uzaktan projeleriniz, fason mühendislik desteklerimiz veya özel talepleriniz için doğrudan bize ulaşın.</p>
+                    <div class="contact-details">
+                        <a href="tel:05513694606" class="contact-item"><span>Telefon:</span> 0551 369 46 06</a>
+                        <a href="mailto:turkogluhasanakin@gmail.com" class="contact-item"><span>E-Posta:</span> turkogluhasanakin@gmail.com</a>
+                        <div class="contact-item"><span>Konum:</span> Ankara, Türkiye</div>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <input type="text" placeholder="Adınız / Firma Adınız">
+                    <input type="email" placeholder="E-Posta Adresiniz">
+                    <textarea placeholder="Proje detaylarınız ve mesajınız..."></textarea>
+                    <button type="button" class="btn-large" onclick="alert('Mesajınız alınmıştır. En kısa sürede dönüş sağlanacaktır.')">Mesaj Gönder</button>
+                </div>
+            </div>
         </div>
     </div>
 
