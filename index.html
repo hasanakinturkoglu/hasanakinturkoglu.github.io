@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Türkoğlu Mühendislik | Ankara Elektronik, PCB ve Tasarım Hizmetleri</title>
+    <meta name="description" content="Türkoğlu Mühendislik; Ankara'da PCB tasarımı, elektronik kart revizyonu, gömülü yazılım, EPLAN pano projeleri, AutoCAD ve SolidWorks çizim hizmetleri sunar.">
+    <meta name="keywords" content="Türkoğlu Mühendislik, Ankara PCB tasarımı, elektronik kart revizyonu, gömülü yazılım, EPLAN, SolidWorks, AutoCAD, mühendislik hizmetleri Ankara">
+    <style>
+        :root {
+            --bg-color: #0b132b;
+            --card-bg: #1c2541;
+            --accent-gold: #c5a059;
+            --accent-blue: #4ea8de;
+            --text-main: #ffffff;
+            --text-muted: #8d99ae;
+        }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+        }
+        nav {
+            background-color: rgba(11, 19, 43, 0.95);
+            border-bottom: 1px solid rgba(197, 160, 89, 0.3);
+            position: fixed;
+            top: 0;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 40px;
+            z-index: 1000;
+        }
+        .nav-brand {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        .nav-brand img {
+            height: 45px;
+            width: auto;
+            border-radius: 4px;
+        }
+        .nav-brand span {
+            font-size: 1.2rem;
+            font-weight: bold;
+            letter-spacing: 1px;
+            color: var(--text-main);
+        }
+        .nav-links {
+            display: flex;
+            gap: 25px;
+            list-style: none;
+        }
+        .nav-links a {
+            color: var(--text-main);
+            text-decoration: none;
+            font-size: 0.95rem;
+            transition: color 0.2s;
+        }
+        .nav-links a:hover {
+            color: var(--accent-gold);
+        }
+        .hero {
+            padding: 160px 20px 80px 20px;
+            text-align: center;
+            background: linear-gradient(rgba(11, 19, 43, 0.9), rgba(11, 19, 43, 0.95)), url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><rect width="100" height="100" fill="%230b132b"/><path d="M0 0l100 100M100 0L0 100" stroke="%231c2541" stroke-width="1"/></svg>');
+            border-bottom: 1px solid #1c2541;
+        }
+        .hero img.main-logo {
+            width: 140px;
+            height: auto;
+            margin-bottom: 25px;
+            border-radius: 8px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.5);
+        }
+        .hero h1 {
+            font-size: 2.8rem;
+            color: var(--text-main);
+            margin-bottom: 15px;
+        }
+        .hero h1 span {
+            color: var(--accent-gold);
+        }
+        .hero p {
+            font-size: 1.2rem;
+            color: var(--text-muted);
+            max-width: 750px;
+            margin: 0 auto 30px auto;
+        }
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 60px 20px;
+        }
+        section h2.section-title {
+            text-align: center;
+            font-size: 2rem;
+            margin-bottom: 40px;
+            color: var(--text-main);
+        }
+        section h2.section-title span {
+            color: var(--accent-gold);
+        }
+        .grid-3 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 25px;
+        }
+        .card {
+            background-color: var(--card-bg);
+            border: 1px solid #283655;
+            border-radius: 8px;
+            padding: 30px;
+            transition: transform 0.2s, border-color 0.2s;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+            border-color: var(--accent-gold);
+        }
+        .card h3 {
+            color: var(--accent-gold);
+            font-size: 1.4rem;
+            margin-bottom: 15px;
+        }
+        .card p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+        .projects-section {
+            background-color: #070b19;
+            padding: 60px 20px;
+        }
+        .contact-box {
+            background-color: var(--card-bg);
+            border: 1px solid var(--accent-gold);
+            border-radius: 8px;
+            padding: 50px;
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .contact-box h2 {
+            margin-bottom: 15px;
+            color: var(--text-main);
+        }
+        .contact-box p {
+            color: var(--text-muted);
+            margin-bottom: 25px;
+        }
+        .btn {
+            display: inline-block;
+            background-color: var(--accent-gold);
+            color: var(--bg-color);
+            padding: 12px 35px;
+            font-weight: bold;
+            text-decoration: none;
+            border-radius: 4px;
+            transition: opacity 0.2s;
+        }
+        .btn:hover {
+            opacity: 0.9;
+        }
+        footer {
+            text-align: center;
+            padding: 30px;
+            color: var(--text-muted);
+            font-size: 0.85rem;
+            background-color: #050811;
+            border-top: 1px solid #1c2541;
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="nav-brand">
+            <span>TÜRKOĞLU MÜHENDİSLİK</span>
+        </div>
+        <ul class="nav-links">
+            <li><a href="#hizmetler">Hizmetler</a></li>
+            <li><a href="#projeler">Projeler & Çalışmalar</a></li>
+            <li><a href="#iletisim">İletişim</a></li>
+        </ul>
+    </nav>
+
+    <header class="hero">
+        <h1>Ankara Profesyonel Mühendislik ve Tasarım <span>Türkoğlu Mühendislik</span></h1>
+        <p>Elektronik donanım, PCB tasarımı, gömülü yazılım, endüstriyel pano ve mekanik modelleme çözümleri ile projelerinize değer katıyoruz.</p>
+        <a href="#iletisim" class="btn">Teklif Al / İletişim</a>
+    </header>
+
+    <div class="container" id="hizmetler">
+        <h2 class="section-title">Uzmanlık <span>Alanlarımız</span></h2>
+        <div class="grid-3">
+            <div class="card">
+                <h3>PCB Tasarımı</h3>
+                <p>Altium ve KiCad altyapısı ile çok katmanlı, güvenilir devre şemaları ve endüstriyel standartlara uygun imalat dosyası hazırlama.</p>
+            </div>
+            <div class="card">
+                <h3>Elektronik Kart Revizyonu</h3>
+                <p>Mevcut elektronik sistemlerinizin performans optimizasyonu, bileşen güncellemeleri, hata analizi ve revizyon çalışmaları.</p>
+            </div>
+            <div class="card">
+                <h3>Gömülü Yazılım</h3>
+                <p>ESP32, STM32 ve mikrodenetleyici tabanlı sistemler için C/C++ ile özel firmware geliştirme ve otomasyon kodlaması.</p>
+            </div>
+            <div class="card">
+                <h3>EPLAN Projelendirme</h3>
+                <p>Endüstriyel tesisler ve elektrik panoları için standartlara tam uyumlu EPLAN şematik çizim ve projelendirme hizmetleri.</p>
+            </div>
+            <div class="card">
+                <h3>AutoCAD Çizimleri</h3>
+                <p>Üretim ve tesisler için hassas 2D teknik resimler, yerleşim planları ve uygulama projeleri.</p>
+            </div>
+            <div class="card">
+                <h3>SolidWorks Çizimleri</h3>
+                <p>Gelişmiş mekanik tasarım, 3D parça ve montaj modellemeleri, imalat resimleri ve sac metal açınım hesaplamaları.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="projects-section" id="projeler">
+        <div class="container" style="padding: 0 20px;">
+            <h2 class="section-title">Tamamlanan Projeler & <span>Çalışmalar</span></h2>
+            <div class="grid-3">
+                <div class="card">
+                    <h3>Güç Elektroniği & Batarya Sistemleri</h3>
+                    <p>Yüksek kapasiteli batarya yönetim sistemleri (BMS) ve özel güç elektroniği kart tasarımları, prototipleme süreçleri.</p>
+                </div>
+                <div class="card">
+                    <h3>Endüstriyel Pano & Otomasyon</h3>
+                    <p>Karmaşık endüstriyel otomasyon sistemleri için hazırlanan detaylı EPLAN elektrik projeleri ve kablolama şemaları.</p>
+                </div>
+                <div class="card">
+                    <h3>Mekanik & Donanım Entegrasyonu</h3>
+                    <p>SolidWorks ile tasarlanan muhafazalar, PCB-kutu uyum modellemeleri ve 3D imalat resim çıktısı çalışmaları.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container" id="iletisim">
+        <div class="contact-box">
+            <h2>Projeleriniz İçin Hemen İletişime Geçin</h2>
+            <p>Ankara merkezli hizmetlerimiz, fason mühendislik desteklerimiz veya özel proje talepleriniz için bize ulaşın.</p>
+            <a href="mailto:info@turkoglumuhendislik.com" class="btn">E-Posta Gönder</a>
+        </div>
+    </div>
+
+    <footer>
+        &copy; 2026 Türkoğlu Mühendislik. Tüm hakları saklıdır. Ankara, Türkiye.
+    </footer>
+
+</body>
+</html>
