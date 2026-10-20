@@ -3,187 +3,212 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Türkoğlu Mühendislik | Ankara Elektronik, PCB ve Tasarım Hizmetleri</title>
+    <title>Türkoğlu Mühendislik | Ankara PCB Tasarımı ve Gömülü Sistemler</title>
     <meta name="description" content="Türkoğlu Mühendislik; Ankara'da PCB tasarımı, elektronik kart revizyonu, gömülü yazılım, EPLAN pano projeleri, AutoCAD ve SolidWorks çizim hizmetleri sunar.">
     <meta name="keywords" content="Türkoğlu Mühendislik, Ankara PCB tasarımı, elektronik kart revizyonu, gömülü yazılım, EPLAN, SolidWorks, AutoCAD, mühendislik hizmetleri Ankara">
     <meta name="google-site-verification" content="mTuzcdj3dChLrxL7nua0qOTvNCqgqzvA2lE5NRnwroo" />
     <style>
         :root {
-            --bg-color: #0b132b;
-            --card-bg: #1c2541;
-            --accent-gold: #c5a059;
-            --accent-blue: #4ea8de;
-            --text-main: #ffffff;
-            --text-muted: #8d99ae;
+            --bg-main: #070b19;
+            --bg-card: #0f172a;
+            --border-color: #1e293b;
+            --accent-gold: #d4af37;
+            --accent-blue: #38bdf8;
+            --text-main: #f8fafc;
+            --text-muted: #94a3b8;
         }
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Inter', 'Segoe UI', sans-serif;
         }
         body {
-            background-color: var(--bg-color);
+            background-color: var(--bg-main);
             color: var(--text-main);
-            line-height: 1.6;
+            line-height: 1.7;
         }
+        /* Navbar */
         nav {
-            background-color: rgba(11, 19, 43, 0.95);
-            border-bottom: 1px solid rgba(197, 160, 89, 0.3);
+            background-color: rgba(7, 11, 25, 0.9);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border-color);
             position: fixed;
             top: 0;
             width: 100%;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 15px 40px;
+            padding: 18px 50px;
             z-index: 1000;
         }
         .nav-brand {
-            display: flex;
-            align-items: center;
-            gap: 15px;
+            font-size: 1.25rem;
+            font-weight: 800;
+            letter-spacing: 1.5px;
+            color: var(--text-main);
         }
         .nav-brand span {
-            font-size: 1.2rem;
-            font-weight: bold;
-            letter-spacing: 1px;
-            color: var(--text-main);
+            color: var(--accent-gold);
         }
         .nav-links {
             display: flex;
-            gap: 25px;
+            gap: 30px;
             list-style: none;
         }
         .nav-links a {
-            color: var(--text-main);
+            color: var(--text-muted);
             text-decoration: none;
             font-size: 0.95rem;
+            font-weight: 500;
             transition: color 0.2s;
         }
         .nav-links a:hover {
             color: var(--accent-gold);
         }
+        /* Hero Section */
         .hero {
-            padding: 160px 20px 80px 20px;
+            padding: 180px 20px 100px 20px;
             text-align: center;
-            background: linear-gradient(rgba(11, 19, 43, 0.9), rgba(11, 19, 43, 0.95));
-            border-bottom: 1px solid #1c2541;
+            background: radial-gradient(circle at center, #111e38 0%, var(--bg-main) 70%);
+            border-bottom: 1px solid var(--border-color);
         }
         .hero h1 {
-            font-size: 2.8rem;
+            font-size: 3rem;
+            font-weight: 800;
             color: var(--text-main);
-            margin-bottom: 15px;
+            margin-bottom: 20px;
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.2;
         }
         .hero h1 span {
             color: var(--accent-gold);
         }
         .hero p {
-            font-size: 1.2rem;
+            font-size: 1.15rem;
             color: var(--text-muted);
-            max-width: 750px;
-            margin: 0 auto 30px auto;
+            max-width: 700px;
+            margin: 0 auto 35px auto;
         }
+        /* Containers & Grids */
         .container {
-            max-width: 1100px;
+            max-width: 1150px;
             margin: 0 auto;
-            padding: 60px 20px;
+            padding: 80px 20px;
         }
-        section h2.section-title {
+        .section-title {
             text-align: center;
-            font-size: 2rem;
-            margin-bottom: 40px;
+            font-size: 2.2rem;
+            font-weight: 700;
+            margin-bottom: 50px;
             color: var(--text-main);
         }
-        section h2.section-title span {
+        .section-title span {
             color: var(--accent-gold);
         }
         .grid-3 {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 25px;
+            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+            gap: 30px;
         }
+        /* Cards */
         .card {
-            background-color: var(--card-bg);
-            border: 1px solid #283655;
-            border-radius: 8px;
-            padding: 30px;
-            transition: transform 0.2s, border-color 0.2s;
+            background-color: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 35px;
+            transition: all 0.3s ease;
         }
         .card:hover {
             transform: translateY(-5px);
             border-color: var(--accent-gold);
+            box-shadow: 0 10px 30px rgba(212, 175, 55, 0.05);
         }
         .card h3 {
             color: var(--accent-gold);
-            font-size: 1.4rem;
+            font-size: 1.35rem;
             margin-bottom: 15px;
+            font-weight: 600;
         }
         .card p {
             color: var(--text-muted);
             font-size: 0.95rem;
         }
-        .projects-section {
-            background-color: #070b19;
-            padding: 60px 20px;
+        /* Projects Section Background */
+        .projects-area {
+            background-color: #050814;
+            border-top: 1px solid var(--border-color);
+            border-bottom: 1px solid var(--border-color);
         }
+        /* Contact Box */
         .contact-box {
-            background-color: var(--card-bg);
+            background: linear-gradient(135deg, var(--bg-card), #13223f);
             border: 1px solid var(--accent-gold);
-            border-radius: 8px;
-            padding: 50px;
+            border-radius: 12px;
+            padding: 60px 40px;
             text-align: center;
-            max-width: 800px;
+            max-width: 850px;
             margin: 0 auto;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.4);
         }
         .contact-box h2 {
+            font-size: 2rem;
             margin-bottom: 15px;
             color: var(--text-main);
         }
         .contact-box p {
             color: var(--text-muted);
-            margin-bottom: 25px;
+            margin-bottom: 30px;
+            font-size: 1.1rem;
         }
         .btn {
             display: inline-block;
             background-color: var(--accent-gold);
-            color: var(--bg-color);
-            padding: 12px 35px;
-            font-weight: bold;
+            color: var(--bg-main);
+            padding: 14px 40px;
+            font-weight: 700;
             text-decoration: none;
-            border-radius: 4px;
-            transition: opacity 0.2s;
+            border-radius: 6px;
+            transition: all 0.2s;
+            font-size: 1rem;
         }
         .btn:hover {
-            opacity: 0.9;
+            background-color: #e6c555;
+            transform: scale(1.02);
         }
+        /* Footer */
         footer {
             text-align: center;
-            padding: 30px;
+            padding: 40px;
             color: var(--text-muted);
-            font-size: 0.85rem;
-            background-color: #050811;
-            border-top: 1px solid #1c2541;
+            font-size: 0.9rem;
+            background-color: #04060e;
+            border-top: 1px solid var(--border-color);
+        }
+        @media(max-width: 768px) {
+            .hero h1 { font-size: 2.2rem; }
+            nav { padding: 15px 20px; }
+            .nav-links { display: none; }
         }
     </style>
 </head>
 <body>
 
     <nav>
-        <div class="nav-brand">
-            <span>TÜRKOĞLU MÜHENDİSLİK</span>
-        </div>
+        <div class="nav-brand">TÜRKOĞLU <span>MÜHENDİSLİK</span></div>
         <ul class="nav-links">
             <li><a href="#hizmetler">Hizmetler</a></li>
-            <li><a href="#projeler">Projeler & Çalışmalar</a></li>
+            <li><a href="#projeler">Projeler</a></li>
             <li><a href="#iletisim">İletişim</a></li>
         </ul>
     </nav>
 
     <header class="hero">
-        <h1>Ankara Profesyonel Mühendislik ve Tasarım <span>Türkoğlu Mühendislik</span></h1>
-        <p>Elektronik donanım, PCB tasarımı, gömülü yazılım, endüstriyel pano ve mekanik modelleme çözümleri ile projelerinize değer katıyoruz.</p>
-        <a href="#iletisim" class="btn">Teklif Al / İletişim</a>
+        <h1>Ankara Profesyonel Mühendislik ve <span>Tasarım Çözümleri</span></h1>
+        <p>Elektronik donanım, PCB tasarımı, gömülü sistemler, endüstriyel pano ve mekanik modelleme projeleriniz için güvenilir alt yüklenici ortağınız.</p>
+        <a href="#iletisim" class="btn">Hemen Teklif Alın</a>
     </header>
 
     <div class="container" id="hizmetler">
@@ -191,7 +216,7 @@
         <div class="grid-3">
             <div class="card">
                 <h3>PCB Tasarımı</h3>
-                <p>Altium ve KiCad altyapısı ile çok katmanlı, güvenilir devre şemaları ve endüstriyel standartlara uygun imalat dosyası hazırlama.</p>
+                <p>Altium ve KiCad altyapısı ile çok katmanlı, sinyal bütünlüğü gözetilen güvenilir devre şemaları ve imalat dosyası hazırlama.</p>
             </div>
             <div class="card">
                 <h3>Elektronik Kart Revizyonu</h3>
@@ -199,15 +224,15 @@
             </div>
             <div class="card">
                 <h3>Gömülü Yazılım</h3>
-                <p>ESP32, STM32 ve mikrodenetleyici tabanlı sistemler için C/C++ ile özel firmware geliştirme ve otomasyon kodlaması.</p>
+                <p>ESP32, STM32 ve mikrodenetleyici tabanlı sistemler için C/C++ ile özel firmware geliştirme, haberleşme protokolleri ve otomasyon.</p>
             </div>
             <div class="card">
                 <h3>EPLAN Projelendirme</h3>
-                <p>Endüstriyel tesisler ve elektrik panoları için standartlara tam uyumlu EPLAN şematik çizim ve projelendirme hizmetleri.</p>
+                <p>Endüstriyel tesisler ve elektrik panoları için uluslararası standartlara tam uyumlu EPLAN şematik projelendirme hizmetleri.</p>
             </div>
             <div class="card">
                 <h3>AutoCAD Çizimleri</h3>
-                <p>Üretim ve tesisler için hassas 2D teknik resimler, yerleşim planları ve uygulama projeleri.</p>
+                <p>Üretim, tesis ve saha uygulamaları için hassas 2D teknik resimler, yerleşim planları ve detay projelendirme.</p>
             </div>
             <div class="card">
                 <h3>SolidWorks Çizimleri</h3>
@@ -216,21 +241,21 @@
         </div>
     </div>
 
-    <div class="projects-section" id="projeler">
-        <div class="container" style="padding: 0 20px;">
-            <h2 class="section-title">Tamamlanan Projeler & <span>Çalışmalar</span></h2>
+    <div class="projects-area" id="projeler">
+        <div class="container">
+            <h2 class="section-title">Çalışma Alanları & <span>Projeler</span></h2>
             <div class="grid-3">
                 <div class="card">
-                    <h3>Güç Elektroniği & Batarya Sistemleri</h3>
-                    <p>Yüksek kapasiteli batarya yönetim sistemleri (BMS) ve özel güç elektroniği kart tasarımları, prototipleme süreçleri.</p>
+                    <h3>Güç Elektroniği & Batarya</h3>
+                    <p>Yüksek kapasiteli güç sistemleri, anahtarlamalı güç kaynakları ve özel donanım prototipleme altyapıları.</p>
                 </div>
                 <div class="card">
-                    <h3>Endüstriyel Pano & Otomasyon</h3>
-                    <p>Karmaşık endüstriyel otomasyon sistemleri için hazırlanan detaylı EPLAN elektrik projeleri ve kablolama şemaları.</p>
+                    <h3>Endüstriyel Pano Tasarımı</h3>
+                    <p>Saha otomasyonu ve güç dağıtım panoları için profesyonel şematik çizimler, klemens ve yerleşim planlamaları.</p>
                 </div>
                 <div class="card">
-                    <h3>Mekanik & Donanım Entegrasyonu</h3>
-                    <p>SolidWorks ile tasarlanan muhafazalar, PCB-kutu uyum modellemeleri ve 3D imalat resim çıktısı çalışmaları.</p>
+                    <h3>Mekanik & Kutu Entegrasyonu</h3>
+                    <p>SolidWorks ile tasarlanan elektronik kart uyumlu muhafazalar, 3D montaj analizleri ve imalat çıktıları.</p>
                 </div>
             </div>
         </div>
@@ -238,8 +263,8 @@
 
     <div class="container" id="iletisim">
         <div class="contact-box">
-            <h2>Projeleriniz İçin Hemen İletişime Geçin</h2>
-            <p>Ankara merkezli hizmetlerimiz, fason mühendislik desteklerimiz veya özel proje talepleriniz için bize ulaşın.</p>
+            <h2>Projeleriniz İçin Bize Ulaşın</h2>
+            <p>Ankara merkezli mühendislik ve tasarım desteklerimiz, fason çözümler veya acil proje talepleriniz için doğrudan iletişime geçin.</p>
             <a href="mailto:info@turkoglumuhendislik.com" class="btn">E-Posta Gönder</a>
         </div>
     </div>
