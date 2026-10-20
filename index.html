@@ -12,7 +12,7 @@
             --bg-body: #050b14;
             --bg-card: #0f172a;
             --border-clr: #1e293b;
-            --accent-color: #f59e0b; /* Dikkat çekici, müşteri çeken kehribar/turuncu vurgu */
+            --accent-color: #f59e0b;
             --accent-hover: #d97706;
             --text-main: #f8fafc;
             --text-muted: #94a3b8;
@@ -72,7 +72,6 @@
             gap: 12px;
             text-decoration: none;
         }
-        /* Logo görseli veya ikonu için alan */
         .nav-brand img {
             height: 38px;
             width: auto;
@@ -113,11 +112,13 @@
         .nav-btn:hover {
             background-color: var(--accent-hover) !important;
         }
-        /* Hero Alanı */
+        /* Hero Alanı (Endüstriyel Görsel / Banner Arka Planlı) */
         .hero {
-            padding: 150px 20px 110px 20px;
+            position: relative;
+            padding: 170px 20px 130px 20px;
             text-align: center;
-            background: radial-gradient(circle at center, #0f172a 0%, var(--bg-body) 70%);
+            /* Era PCB tarzı koyu teknolojik arka plan görseli ve karartma katmanı */
+            background: linear-gradient(rgba(5, 11, 20, 0.85), rgba(5, 11, 20, 0.92)), url('https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1920&q=80') no-repeat center center/cover;
             border-bottom: 1px solid var(--border-clr);
         }
         .hero h1 {
@@ -296,7 +297,8 @@
     <!-- Ana Menü ve Logo Alanı -->
     <nav>
         <a href="#" class="nav-brand">
-            <img src="logo.png" alt="Türkoğlu Mühendislik Logo">
+            <!-- Logon aktifse aşağıdaki img etiketi çalışacaktır -->
+            <!-- <img src="logo.png" alt="Türkoğlu Mühendislik Logo"> -->
             <div class="logo-text">TÜRKOĞLU <span>MÜHENDİSLİK</span></div>
         </a>
         <ul class="nav-links">
@@ -307,7 +309,7 @@
         </ul>
     </nav>
 
-    <!-- Manşet Alanı (Hero) -->
+    <!-- Manşet Alanı (Endüstriyel PCB Arka Plan Görseli ile) -->
     <header class="hero">
         <h1>Ankara Profesyonel Mühendislik ve <span>PCB Tasarım Çözümleri</span></h1>
         <p>Elektronik donanım, çok katmanlı PCB tasarımı, gömülü sistemler, endüstriyel pano ve mekanik modelleme projeleriniz için güvenilir mühendislik ortağınız.</p>
