@@ -72,10 +72,6 @@
             gap: 12px;
             text-decoration: none;
         }
-        .nav-brand img {
-            height: 38px;
-            width: auto;
-        }
         .logo-text {
             font-size: 1.25rem;
             font-weight: 800;
@@ -112,12 +108,11 @@
         .nav-btn:hover {
             background-color: var(--accent-hover) !important;
         }
-        /* Hero Alanı (Endüstriyel Görsel / Banner Arka Planlı) */
+        /* Hero Alanı */
         .hero {
             position: relative;
             padding: 170px 20px 130px 20px;
             text-align: center;
-            /* Era PCB tarzı koyu teknolojik arka plan görseli ve karartma katmanı */
             background: linear-gradient(rgba(5, 11, 20, 0.85), rgba(5, 11, 20, 0.92)), url('https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1920&q=80') no-repeat center center/cover;
             border-bottom: 1px solid var(--border-clr);
         }
@@ -297,7 +292,6 @@
     <!-- Ana Menü ve Logo Alanı -->
     <nav>
         <a href="#" class="nav-brand">
-            <!-- Logon aktifse aşağıdaki img etiketi çalışacaktır -->
             <!-- <img src="logo.png" alt="Türkoğlu Mühendislik Logo"> -->
             <div class="logo-text">TÜRKOĞLU <span>MÜHENDİSLİK</span></div>
         </a>
@@ -309,7 +303,7 @@
         </ul>
     </nav>
 
-    <!-- Manşet Alanı (Endüstriyel PCB Arka Plan Görseli ile) -->
+    <!-- Manşet Alanı (Hero) -->
     <header class="hero">
         <h1>Ankara Profesyonel Mühendislik ve <span>PCB Tasarım Çözümleri</span></h1>
         <p>Elektronik donanım, çok katmanlı PCB tasarımı, gömülü sistemler, endüstriyel pano ve mekanik modelleme projeleriniz için güvenilir mühendislik ortağınız.</p>
@@ -380,7 +374,7 @@
         </div>
     </div>
 
-    <!-- İletişim Bölümü -->
+    <!-- İletişim Bölümü (Gerçek E-Posta Gönderme Altyapısı Eklenmiş Hali) -->
     <div class="alt-section" id="iletisim">
         <div class="container">
             <div class="contact-container">
@@ -393,12 +387,18 @@
                         <div class="contact-item"><span>Konum:</span> Ankara, Türkiye</div>
                     </div>
                 </div>
-                <div class="contact-form">
-                    <input type="text" placeholder="Adınız / Firma Adınız">
-                    <input type="email" placeholder="E-Posta Adresiniz">
-                    <textarea placeholder="Proje detaylarınız ve mesajınız..."></textarea>
-                    <button type="button" class="btn-large" onclick="alert('Mesajınız alınmıştır. En kısa sürede dönüş sağlanacaktır.')">Mesaj Gönder</button>
-                </div>
+                <!-- Web3Forms üzerinden doğrudan mail adresine gönderim yapan form -->
+                <form action="https://api.web3forms.com/submit" method="POST" class="contact-form">
+                    <!-- Buraya kendi e-posta adresini otomatik bağlayan gizli anahtar tanımlandı -->
+                    <input type="hidden" name="access_key" value="YOUR_ACCESS_KEY_HERE">
+                    <input type="hidden" name="subject" value="Türkoğlu Mühendislik Sitesinden Yeni Teklif/Mesaj!">
+                    
+                    <input type="text" name="name" placeholder="Adınız / Firma Adınız" required>
+                    <input type="email" name="email" placeholder="E-Posta Adresiniz" required>
+                    <textarea name="message" placeholder="Proje detaylarınız ve mesajınız..." required></textarea>
+                    
+                    <button type="submit" class="btn-large">Mesaj Gönder</button>
+                </form>
             </div>
         </div>
     </div>
